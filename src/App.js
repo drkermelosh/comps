@@ -1,25 +1,29 @@
-import logo from './logo.svg';
-import './App.css';
+import Button from './Button'
+import { GoBellFill} from "react-icons/go";
+import {BsCloudDownload} from "react-icons/bs";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    
+    const handleClick = () => {
+        console.log("Button Pressed")
+    }
+    return <div>
+        <div>
+            <Button primary rounded outline className="mb-5" onMouseEnter={handleClick} onClick={handleClick}><GoBellFill/> Click Here!</Button>
+        </div>
+        <div>
+            <Button secondary outline> <BsCloudDownload/> Buy Now</Button>
+        </div>
+        <div>
+            <Button success outline>See Deal</Button>
+        </div>
+        <div>
+            <Button warning>Hide Ads!</Button>
+        </div>
+        <div>
+            <Button danger rounded>Add to Cart</Button>
+        </div>
     </div>
-  );
 }
 
 export default App;
